@@ -1,0 +1,14 @@
+<!--page body ends -->
+<app-sidebar id="aside" class="page-sidenav no-shrink bg-light nav-dropdown fade sticky" aria-hidden="true"></app-sidebar>
+<div id="main" class="layout-column flex">
+  <!-- partial:partials/_sidebar.html -->
+  <app-navbar id="header" class="page-header bg-body sticky border-bottom"></app-navbar>
+  <!-- partial -->
+  <div id="content" class="flex">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-footer id="footer" class="page-footer hide"></app-footer>
+  <!-- main-panel ends -->
+</div>

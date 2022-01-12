@@ -1,0 +1,43 @@
+
+mat-form-field  input::placeholder {
+    color: #000;
+}
+
+::ng-deep .mat-form-field-underline {
+    background-color: rgba(0, 0, 0, 0.42) !important;
+}
+mat-card {
+    box-shadow : none !important
+}
+
+.disabled {
+    background-color: #d2bf78;
+}
+::ng-deep .mat-checkbox-frame {
+    border-color: rgba(0, 0, 0, 0.54);
+}
+::ng-deep  .mat-checkbox-layout {
+    margin-bottom: 0;
+}
+.holder {
+    height: 100vh;
+    z-index: 8;
+    background-image: url("/assets/img/background.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 768px) {
+    .box {
+        height: fit-content;
+        }
+}
+@media (max-width: 768px) {
+    .box {
+        height: 100%;
+        }
+}

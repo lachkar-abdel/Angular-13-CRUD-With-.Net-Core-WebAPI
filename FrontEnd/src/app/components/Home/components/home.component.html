@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-3 col-md-2 tm-colon" style="background-color:white">
+        <div class="container">
+
+            <a href="">
+                <img src="assets/img/Le17OceanLogo.png" />
+            </a>
+              <nav class="nav flex-column">
+                <a class="nav-link"  (click)="click('')">ALL</a>&nbsp;
+                <a class="nav-link" (click)="click('Made')"> MADE</a>&nbsp;
+                <a class="nav-link"  (click)="click('Accesoires')">ACCESSOIRES</a>&nbsp;
+                <a class="nav-link"  (click)="click('Déco')">DECO</a>&nbsp;
+                <a class="nav-link"  (click)="click('Cosmetiques')">COSMETIQUES</a>&nbsp;
+                <a class="nav-link"  (click)="click('Epicerie')" >EPICERIE</a>&nbsp;
+              </nav>
+            <br><br><br>
+            <div >
+                <a href="#" class="fa fa-facebook" aria-hidden="true" style="font-size: 25px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" class="fa fa-twitter" aria-hidden="true" style="font-size: 25px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="#" class="fa fa-instagram" aria-hidden="true" style="font-size: 25px;"></a>
+            </div>
+
+   
+       
+
+
+        </div>
+        <br>
+        <div class="copy_right" style="position:absolute;bottom:0;">
+            <h6>Copyright © <a href="/">Le17Ocean</a> 2021.. Tous droits réservés. </h6>
+            <h6>Created By <a href="http://dataflex.pro" target="_blank">Dataflex.pro</a> </h6>
+        </div>
+       
+    </div>
+   
+    <div class="d-flex col-9 col-md-10 tm-colon px-0" style="overflow:hidden;">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

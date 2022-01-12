@@ -1,0 +1,32 @@
+.home-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    min-height: 150px; /* Added to show image */
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.6; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}

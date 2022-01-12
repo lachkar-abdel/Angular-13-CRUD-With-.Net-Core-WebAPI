@@ -1,0 +1,63 @@
+<div class="sidenav h-100 modal-dialog bg-light">
+   <!-- sidenav top -->
+   <!-- Flex nav content -->
+   <div class="flex scrollable hover">
+      <div class="pt-2">
+         <div class="nav-fold px-2">
+            <a class="d-flex p-2" data-toggle="dropdown">
+            <span class="avatar w-40 rounded hide">J</span>
+            <img src="assets/img/Le17OceanLogo.png" alt="..." class="w-80 r"> 
+            </a>
+            
+         </div>
+      </div>
+      <div class="nav-active-text-primary" data-nav>
+        <ul class="nav bg">
+            <li class="nav-header hidden-folded">
+                <span class="text-muted">Main</span>
+            </li>
+            <li [ngClass]="{'active': activeRoute === '/' || !activeRoute}">
+                <a [routerLink]="['/dashboard']">
+                    <span class="nav-icon text-primary"><i data-feather='home'></i></span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+           
+        </ul>
+        <ul class="nav ">
+           <li class="nav-header hidden-folded">
+               <span class="text-muted">Manage</span>
+           </li>
+            <li [ngClass]="{'active': activeRoute.includes('orders')}">
+               <a [routerLink]="['produit']">
+               <span class="nav-icon"><i data-feather="package"></i></span>
+               <span class="nav-text">Gestion Produit</span>
+               </a>
+            </li>
+            <li [ngClass]="{'active': activeRoute.includes('services')}">
+               <a [routerLink]="['categorie']">
+               <span class="nav-icon"><i data-feather="tag"></i></span>
+               <span class="nav-text">Gestion Categorie</span>
+               </a>
+            </li>
+           
+        </ul>
+     </div>
+   </div>
+
+   <!-- sidenav bottom -->
+   <div class="py-2 mt-2 b-t no-shrink">
+      <ul class="nav no-border">
+         <li>
+            <a (click)="logout()">
+               <span class="nav-icon">
+                   <i data-feather="power"></i>
+               </span>
+               <span>
+               <i class="nav-text fa fa-sign-out" aria-hidden="true"></i>Logout
+                </span>
+           </a>
+         </li>
+      </ul>
+   </div>
+</div>

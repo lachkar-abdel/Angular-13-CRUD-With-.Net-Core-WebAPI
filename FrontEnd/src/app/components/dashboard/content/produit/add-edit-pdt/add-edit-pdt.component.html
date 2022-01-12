@@ -1,0 +1,102 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+  <div class="form-froup row" style="width: 60%;">
+
+    <label class="col-sm-2 col-form-label">Produit Title</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="title"
+        placeholder="Enter Produit Title">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Description Produit</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="content"
+        placeholder="Enter Produit Description">
+    </div>
+
+
+    <label class="col-sm-2 col-form-label">Categorie</label>
+    <div class="col-sm-10">
+
+        <select class="form-control" [(ngModel)]="categorie">
+          <option>--select--</option>
+          <option *ngFor="let catName of CategorieList">
+
+            {{catName.Cat_Name}}
+
+          </option>
+        </select>
+    </div>
+
+
+   <label class="col-sm-2 col-form-label">date</label>
+    <div class="col-sm-10">
+        <input type="date"  [(ngModel)]="posted_on">
+    </div>
+
+    
+  </div>
+  <div class="ml-3 bd-highlight" style="width: 40%;">
+  
+  <!--input multiple files-->
+  <input type="file" multiple (change)="fileChangeEvent($event)" />
+  <div style="display:flex;max-width:600px;overflow: auto;">
+    <div *ngFor="let item of ulpoadedFiles" style="margin:5px">
+      <span (click)="cropImage(item.imgId)">
+        <img  [src]="item.imgBase64" style="max-width:300px;max-height:100px ;border:2px solid gray" />
+      </span>
+    </div>
+
+  </div>
+  <div class="row" *ngIf="ulpoadedFiles?.length > 0">
+    <button (click)="SaveAllImages()">Save All</button>
+  </div>
+
+  <div *ngIf="finalImageList?.length > 0" style="display:flex;max-width:600px;overflow: auto;">
+    final Image <br />
+    <div *ngFor="let item of finalImageList" style="margin:5px">
+        <img [src]='previews[0]'  [src]="item" style="max-width:300px;max-height:100px ;border:2px solid gray" />
+    </div>
+
+  </div>
+  <!--popup modal-->
+  <div class="backdrop" style="display:contents;"></div>
+
+  <div class="modal" tabindex="-1" role="dialog"  style="display:contents;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Image Cropper</h4>
+          <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <image-cropper [imageChangedEvent]="imageChangedEvent"
+                         [maintainAspectRatio]="true"
+                         [aspectRatio]="4 / 3"
+                         [resizeToWidth]="128"
+                         format="png"
+                         (imageCropped)="imageCropped($event)"
+                         (imageLoaded)="imageLoaded()"
+                         (cropperReady)="cropperReady()"
+                         (loadImageFailed)="loadImageFailed()" style="max-height:500px">
+                      </image-cropper>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="SaveCropedImage()">Save</button>
+          <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <button (click)="addProduit()" *ngIf="pdt.id==0" class="btn btn-primary">
+    Ajouter
+  </button>
+
+  <button (click)="updateProduit()" *ngIf="pdt.id!=0" class="btn btn-primary">
+    Modifier
+  </button>
+
+</div>

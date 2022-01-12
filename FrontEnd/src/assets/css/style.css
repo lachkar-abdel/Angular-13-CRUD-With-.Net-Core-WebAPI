@@ -1,0 +1,38 @@
+textarea {
+    resize: none;
+}
+.text-orange {
+    color: var(--orange);
+}
+html {
+    overflow-x: hidden;
+}
+
+.tm-colon {
+    height: 100vh;
+}
+
+.tm-colon-bcl {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    border: 1px solid #000000;
+}
+
+.tm-colon-bcr {
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.wit-cls {
+    width: 100%;
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

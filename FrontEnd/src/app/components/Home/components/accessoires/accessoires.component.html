@@ -1,0 +1,63 @@
+<div class=" col-12 col-md-12 tm-colon px-0" style="overflow: hidden; overflow-y: scroll;">
+    <section class="page-section bg-light" id="portfolio">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Accessoires</h2>
+                <h3 class="section-subheading text-muted">Description Categorie.</h3>
+            </div>
+            <div class="row">
+             <ng-container *ngFor="let item of ProduitList">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1 -->
+                        <div class="portfolio-item" >
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1"> 
+                                <img class="img-fluid" src='{{returnUrl(item.main_image)}}' />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">{{item.title}}</div>
+                                <div class="portfolio-caption-subheading text-muted">{{item.content}}</div>
+                            </div>
+                        </div>
+                </div>
+             </ng-container>
+            </div>
+        
+    </section>
+
+</div>
+
+<!-- Portfolio Modals-->
+<!-- Portfolio item 1 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close.png" style="width:50px;" alt="Close modal" /></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Categorie Name</h2>
+                            <p class="item-intro text-muted">Titre Categorie.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/img-1.jpg" alt="..." />
+                            <p>Description Categorie!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Name:</strong>
+                                    name
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Illustration
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-times me-1"></i>
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
